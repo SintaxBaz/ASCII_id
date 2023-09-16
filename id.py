@@ -38,7 +38,7 @@ for link in link_list:
     if link_lenght > link_lenght:
         lenght_check_link = link_lenght
 
-max_len = max(len(("name:" +name)), len(("batch: "+batch)), (("hobies: " + lenght_check)), (("links: "+lenght_check_link)))
+max_len = max(len(name), len(batch), lenght_check, lenght_check_link)
 
 print(max_len)
 
@@ -54,16 +54,50 @@ print("/"*int(max_len + 8))
 print("=", end="") 
 
 #ascci id
-one_sideGap = math.floor((max_len - 2)/2)
+one_sideGap = math.floor((max_len + 6 - len(name))/2)
 print(" "*one_sideGap, end="")
 print("ID CARD", end="")
-print(" "*(one_sideGap+((max_len - 2)%2)), end="")
+print(" "*(one_sideGap+((max_len + 6 -len(name))%2)), end="")
 print("=")
 
+print("=", end="")
+print(" "*(max_len +6),end="")
+print("=")
 
+one_sideGap = math.floor((max_len + 6 - len(name))/2)
+print("=", end="")
+print(" "*one_sideGap, end="")
+print(name, end="")
+print(" "*(one_sideGap+((max_len + 6 -len(name))%2)), end="")
+print("=")
 
+one_sideGap = math.floor((max_len + 6 - len(name))/2)
+print("=", end="")
+print(" "*one_sideGap, end="")
+print(batch, end="")
+print(" "*(one_sideGap+((max_len + 6 -len(name))%2)), end="")
+print("=")
+
+leng = 0
+
+for index, hobie in enumerate(hobie_list):
+    one_sideGap = math.floor((max_len + 6 - len(name))/2)
+    leng += len(hobie)+1
+
+    if leng >= max_len:
+        print("")
+        
+    print("=", end="")
+    print(" "*one_sideGap, end="")
+    print(hobie, end="")
+    print(", ",end="")
+    print(" "*(one_sideGap+((max_len + 6 -len(name))%2)), end="")
+    print("=")
+
+    if len(hobie_list) - 1 == index:
+        break
 #do the height
-
+#"ID card" max length thing
 
 
 
